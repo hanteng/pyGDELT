@@ -71,7 +71,7 @@ def load(path=path_local_data, fn="GDELT_working.tsv", column_key=0):
         print ">>Data folder does not exist yet...please run GDELT_data_download.py first"
     else:
         if not os.path.exists(fn_df_working):
-            print ">>Data file {0}, is expected but does not exist"
+            print ">>Data file {0}, is expected but does not exist".format(fn_df_working)
         else:
             meta_df, meta_dict=load_meta()
             
@@ -97,10 +97,12 @@ def load(path=path_local_data, fn="GDELT_working.tsv", column_key=0):
                         u'a2_religion2': np.dtype((str, 255)),
                         u'a1_ethnic': np.dtype((str, 16)),
                         u'a2_ethnic': np.dtype((str, 16)),
+                        u'ac_geo_lat': np.float32,
+                        u'ac_geo_long': np.float32,
                         u'da_dateadded': np.int32,
                         u'da_sourceurl': np.dtype((str, 255))            
                         }
-            print fn_df_working
-            df_working=import_from_csv(fn_df_working, sep='\t', header=0, parse_dates = ['ti_d'], infer_datetime_format= True)      #, na_values=["{na}"], dtype =dict_dtype   
+            print ">>Data file {0}, is expected and loaded now".format(fn_df_working)
+            df_working=import_from_csv(fn_df_working, sep='\t', header=0, parse_dates = ['ti_d'], infer_datetime_format= True, na_values=["{na}"])      #, , dtype =dict_dtype   
             
     return df_working
