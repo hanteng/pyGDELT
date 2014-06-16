@@ -1,0 +1,3 @@
+Python interface for  the [GDELT (Global database of events, language and tone) dataset](http://gdeltproject.org/about.html).
+
+The data selection and maps are produced as [an exercise explained here in a blog post](http://people.oii.ox.ac.uk/hanteng/2014/06/16/exploring-mainland-chinese-interactions-with-the-world-using-the-gdelt-dataset/), researchers are encouraged to modify the codes for their own research questions.
